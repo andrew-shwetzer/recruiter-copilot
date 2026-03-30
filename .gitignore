@@ -1,0 +1,11 @@
+# Dev artifacts
+deep-build/
+deep-build-v2/
+shared/
+.pytest_cache/
+__pycache__/
+*.pyc
+.DS_Store
+
+# Don't commit API keys
+.env

@@ -1,0 +1,34 @@
+{
+  "name": "recruiter",
+  "version": "2.1.0",
+  "description": "Complete recruiting copilot. Signal monitoring, candidate sourcing, outreach (draft + send), ATS integration, pipeline management, candidate verification. Connects to Gmail, Calendar, Greenhouse, Lever, Ashby. Works with or without API keys — 8 skills free, full suite with integrations.",
+  "author": {
+    "name": "Talent Signals",
+    "email": "info@talentsignals.ai",
+    "url": "https://talentsignals.ai"
+  },
+  "keywords": ["recruiting", "sourcing", "outreach", "ATS", "hiring"],
+  "license": "MIT",
+  "userConfig": {
+    "ats_provider": {
+      "description": "Your ATS: greenhouse, lever, ashby, bullhorn, or none",
+      "sensitive": false
+    },
+    "ats_api_key": {
+      "description": "API key for your ATS (found in Settings > Integrations)",
+      "sensitive": true
+    },
+    "ats_user_id": {
+      "description": "Your user ID in the ATS (required for Greenhouse and Lever)",
+      "sensitive": false
+    },
+    "rapidapi_key": {
+      "description": "RapidAPI key for LinkedIn data and job search",
+      "sensitive": true
+    },
+    "email_enrichment_key": {
+      "description": "Hunter.io or IcyPeas API key for email finding",
+      "sensitive": true
+    }
+  }
+}
