@@ -25,7 +25,7 @@ cd recruiter-copilot
 **1. Configure your preferences (do this first):**
 
 ```
-/rp-setup
+/setup
 ```
 
 This walks you through entering your recruiter profile, the types of roles you work, and optionally your API keys. Takes about 2 minutes. Seven skills work immediately with zero API keys.
@@ -33,7 +33,7 @@ This walks you through entering your recruiter profile, the types of roles you w
 **2. Find your first target company:**
 
 ```
-/rp-signals Stripe, Databricks, Figma
+/signals Stripe, Databricks, Figma
 ```
 
 Scans each company for hiring signals and scores them 1–10. Automatically saves leads for any company scoring 5+.
@@ -41,7 +41,7 @@ Scans each company for hiring signals and scores them 1–10. Automatically save
 **3. Research before you reach out:**
 
 ```
-/rp-research Stripe
+/research Stripe
 ```
 
 Builds a full intelligence brief: funding history, hiring patterns, key people, tech stack, and a recommended outreach angle.
@@ -49,15 +49,15 @@ Builds a full intelligence brief: funding history, hiring patterns, key people, 
 **4. Draft the outreach:**
 
 ```
-/rp-outreach Stripe
+/outreach Stripe
 ```
 
-Writes a 3-email cold sequence to the right hiring manager, grounded in what `/rp-research` found.
+Writes a 3-email cold sequence to the right hiring manager, grounded in what `/research` found.
 
 **5. Check your pipeline anytime:**
 
 ```
-/rp-pipeline
+/pipeline
 ```
 
 ---
@@ -66,24 +66,24 @@ Writes a 3-email cold sequence to the right hiring manager, grounded in what `/r
 
 | Skill | What it does | API Required |
 |-------|-------------|--------------|
-| `/rp-signals <company>` | Detect hiring signals, score 1–10, save as lead | Free |
-| `/rp-research <company>` | Deep company intelligence brief | Free |
-| `/rp-outreach <company>` | Draft 3-email cold sequence to hiring manager | Free |
-| `/rp-candidate-msg <name>` | Draft personalized candidate outreach | Free |
-| `/rp-resume-screen` | Screen resume against job description | Free |
-| `/rp-market-map <role>` | Map competitive landscape for a role | Free |
-| `/rp-score <candidate>` | Score candidate fit across 9 dimensions | Free |
-| `/rp-source <role>` | Find matching candidates on LinkedIn | RapidAPI |
-| `/rp-find-dm <company>` | Find the hiring manager to contact | RapidAPI |
-| `/rp-verify <candidate>` | Verify candidate claims and flag red flags | RapidAPI |
-| `/rp-interview-prep <name>` | Generate identity verification questions | RapidAPI |
-| `/rp-find-jobs <role>` | Search live job boards for open roles | RapidAPI |
-| `/rp-enrich <name> at <co>` | Find verified email for a contact | Hunter/Icypeas |
-| `/rp-reverse <candidate>` | Find best jobs for a candidate, draft outreach | RapidAPI |
-| `/rp-pipeline` | View and update your active pipeline | Free |
-| `/rp-briefing` | Daily market intelligence briefing | Free |
-| `/rp-setup` | First-run configuration wizard | Free |
-| `/rp-help` | Full skill guide with examples | Free |
+| `/signals <company>` | Detect hiring signals, score 1–10, save as lead | Free |
+| `/research <company>` | Deep company intelligence brief | Free |
+| `/outreach <company>` | Draft 3-email cold sequence to hiring manager | Free |
+| `/candidate-msg <name>` | Draft personalized candidate outreach | Free |
+| `/resume-screen` | Screen resume against job description | Free |
+| `/market-map <role>` | Map competitive landscape for a role | Free |
+| `/score <candidate>` | Score candidate fit across 9 dimensions | Free |
+| `/source <role>` | Find matching candidates on LinkedIn | RapidAPI |
+| `/find-dm <company>` | Find the hiring manager to contact | RapidAPI |
+| `/verify <candidate>` | Verify candidate claims and flag red flags | RapidAPI |
+| `/interview-prep <name>` | Generate identity verification questions | RapidAPI |
+| `/find-jobs <role>` | Search live job boards for open roles | RapidAPI |
+| `/enrich <name> at <co>` | Find verified email for a contact | Hunter/Icypeas |
+| `/reverse <candidate>` | Find best jobs for a candidate, draft outreach | RapidAPI |
+| `/pipeline` | View and update your active pipeline | Free |
+| `/briefing` | Daily market intelligence briefing | Free |
+| `/setup` | First-run configuration wizard | Free |
+| `/help` | Full skill guide with examples | Free |
 
 ---
 
@@ -93,7 +93,7 @@ Writes a 3-email cold sequence to the right hiring manager, grounded in what `/r
 |------|-------------|---------------|-----------------|
 | **Tier 1 — Free** | $0 | Nothing | 7 skills: signals, research, outreach, resume screen, market map, score, candidate msg |
 | **Tier 2 — Basic** | ~$50/mo | RapidAPI key (Fresh LinkedIn Profile Data + JSearch) | +4 skills: source, find-dm, verify, interview-prep, find-jobs, reverse |
-| **Tier 3 — Pro** | ~$94–109/mo | RapidAPI + Hunter.io ($44/mo) or Icypeas ($59/mo) | +1 skill: email enrichment via `/rp-enrich` |
+| **Tier 3 — Pro** | ~$94–109/mo | RapidAPI + Hunter.io ($44/mo) or Icypeas ($59/mo) | +1 skill: email enrichment via `/enrich` |
 
 All API keys are stored locally in `~/.recruiter-skills/config.yaml`. They are never sent anywhere except the API endpoints you configure.
 
@@ -121,7 +121,7 @@ All data is stored in `~/.recruiter-skills/` on your machine:
 
 **Do I need all the API keys?**
 
-No. Seven skills work free with no API keys at all. Run `/rp-setup` and skip the API key steps — you can add them later from the same wizard.
+No. Seven skills work free with no API keys at all. Run `/setup` and skip the API key steps — you can add them later from the same wizard.
 
 **Which API should I add first?**
 
@@ -137,7 +137,7 @@ The skills install into `~/.claude/skills/` and data lives in `~/.recruiter-skil
 
 **Something broke. Where do I start?**
 
-Run `/rp-setup` again — it checks your config and API key connectivity. Then run `/rp-help` to confirm which skills are active for your tier.
+Run `/setup` again — it checks your config and API key connectivity. Then run `/help` to confirm which skills are active for your tier.
 
 **Can I customize the skills?**
 

@@ -5,7 +5,7 @@ argument-hint: "[skill-name for detailed help]"
 user_invocable: true
 ---
 
-# /recruiter:help — Skill Guide
+# /help — Skill Guide
 
 You are a helpful guide for the Recruiter Skills Pack. Your job is to show the recruiter what tools are available, which ones they can use right now, and which skill to run first based on where they are in their workflow.
 
@@ -13,8 +13,8 @@ You are a helpful guide for the Recruiter Skills Pack. Your job is to show the r
 
 The user will invoke this as:
 
-- `/recruiter:help` — show full skill directory
-- `/recruiter:help [skill-name]` — show detailed help for one skill (e.g., `/recruiter:help signals`)
+- `/help` — show full skill directory
+- `/help [skill-name]` — show detailed help for one skill (e.g., `/help signals`)
 
 ## Step 0 — Read Config to Determine Tier
 
@@ -42,11 +42,11 @@ ls ~/.recruiter-skills/data/candidates/ 2>/dev/null | wc -l
 ```
 
 Use this to determine what the recruiter should do next:
-- No config → suggest `/recruiter:setup`
-- Config exists but no leads → suggest `/recruiter:signals`
-- Leads exist but no outreach → suggest `/recruiter:outreach`
-- Outreach sent, no candidates → suggest `/recruiter:source` or `/recruiter:briefing`
-- Has candidates → suggest `/recruiter:pipeline`
+- No config → suggest `/setup`
+- Config exists but no leads → suggest `/signals`
+- Leads exist but no outreach → suggest `/outreach`
+- Outreach sent, no candidates → suggest `/source` or `/briefing`
+- Has candidates → suggest `/pipeline`
 
 ## Step 2 — Build Output
 
@@ -58,8 +58,8 @@ RECRUITER SKILLS PACK — Your AI Recruiting Toolkit
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 YOUR TIER: [Free (7 skills) | Basic (11 skills) | Pro (15 skills — all unlocked)]
-[If Tier 1:] Upgrade to Basic: add your RapidAPI key in /recruiter:setup to unlock 4 more skills.
-[If Tier 2:] Upgrade to Pro: add Hunter.io/Icypeas + JSearch keys in /recruiter:setup.
+[If Tier 1:] Upgrade to Basic: add your RapidAPI key in /setup to unlock 4 more skills.
+[If Tier 2:] Upgrade to Pro: add Hunter.io/Icypeas + JSearch keys in /setup.
 [If Tier 3:] All APIs configured. ✓
 
 START HERE: [personalized based on pipeline state from Step 1]
@@ -69,88 +69,88 @@ START HERE: [personalized based on pipeline state from Step 1]
 
 FIND OPPORTUNITIES
 ──────────────────────────────────────────────────────
-  /recruiter:signals <company>          Detect hiring signals at a company
+  /signals <company>          Detect hiring signals at a company
                                  Score 1–10. Saves leads automatically.
-                                 Example: /recruiter:signals Stripe, Plaid, Brex
+                                 Example: /signals Stripe, Plaid, Brex
 
-  /recruiter:findjobs <role>           Search live job boards for open roles    [RapidAPI]
-                                 Example: /recruiter:findjobs "DevOps engineer Austin"
+  /find-jobs <role>           Search live job boards for open roles    [RapidAPI]
+                                 Example: /find-jobs "DevOps engineer Austin"
 
-  /recruiter:briefing                   Daily market intelligence briefing
+  /briefing                   Daily market intelligence briefing
                                  New postings + market news + pipeline snapshot
-                                 Example: /recruiter:briefing
+                                 Example: /briefing
 
 RESEARCH & ENRICH
 ──────────────────────────────────────────────────────
-  /recruiter:research <company>         Deep company intelligence brief
+  /research <company>         Deep company intelligence brief
                                  Funding, hiring patterns, key people, outreach angle
-                                 Example: /recruiter:research Datadog --deep
+                                 Example: /research Datadog --deep
 
-  /recruiter:finddm <company>          Find the decision maker to contact       [RapidAPI]
-                                 Example: /recruiter:finddm Snowflake
+  /find-dm <company>          Find the decision maker to contact       [RapidAPI]
+                                 Example: /find-dm Snowflake
 
-  /recruiter:enrich <name> at <co>      Find email address for a contact         [Hunter/Icypeas]
-                                 Example: /recruiter:enrich "Sarah Chen" at Figma
+  /enrich <name> at <co>      Find email address for a contact         [Hunter/Icypeas]
+                                 Example: /enrich "Sarah Chen" at Figma
 
-  /recruiter:marketmap <role>          Map the competitive landscape for a role
-                                 Example: /recruiter:marketmap "Head of Security SaaS"
+  /market-map <role>          Map the competitive landscape for a role
+                                 Example: /market-map "Head of Security SaaS"
 
 OUTREACH
 ──────────────────────────────────────────────────────
-  /recruiter:outreach <company>         Draft cold outreach to hiring manager
+  /outreach <company>         Draft cold outreach to hiring manager
                                  3-email sequence. Grounded in signal data.
-                                 Example: /recruiter:outreach Acme Corp
+                                 Example: /outreach Acme Corp
 
-  /recruiter:candidatemsg <name>       Draft personalized candidate message
-                                 Example: /recruiter:candidatemsg "Alex Torres"
+  /candidate-msg <name>       Draft personalized candidate message
+                                 Example: /candidate-msg "Alex Torres"
 
 EVALUATE CANDIDATES
 ──────────────────────────────────────────────────────
-  /recruiter:source <role>              Find matching candidates on LinkedIn      [RapidAPI]
-                                 Example: /recruiter:source "Staff Engineer Python remote"
+  /source <role>              Find matching candidates on LinkedIn      [RapidAPI]
+                                 Example: /source "Staff Engineer Python remote"
 
-  /recruiter:score <candidate>          Score candidate-job fit (9 dimensions)
-                                 Example: /recruiter:score jane-smith
+  /score <candidate>          Score candidate-job fit (9 dimensions)
+                                 Example: /score jane-smith
 
-  /recruiter:resumescreen              Screen resume against a job description
-                                 Example: /recruiter:resumescreen resume.pdf against jd.txt
+  /resume-screen              Screen resume against a job description
+                                 Example: /resume-screen resume.pdf against jd.txt
 
-  /recruiter:verify <candidate>         Verify candidate claims + red flags       [RapidAPI]
-                                 Example: /recruiter:verify "Michael Brown"
+  /verify <candidate>         Verify candidate claims + red flags       [RapidAPI]
+                                 Example: /verify "Michael Brown"
 
-  /recruiter:interviewprep <name>      Generate identity verification questions  [RapidAPI]
-                                 Example: /recruiter:interviewprep "Chris Park"
+  /interview-prep <name>      Generate identity verification questions  [RapidAPI]
+                                 Example: /interview-prep "Chris Park"
 
 REVERSE RECRUITER
 ──────────────────────────────────────────────────────
-  /recruiter:reverse <candidate>        Find best jobs for a candidate +          [RapidAPI]
+  /reverse <candidate>        Find best jobs for a candidate +          [RapidAPI]
                                  draft outreach to those companies
-                                 Example: /recruiter:reverse "Dana Lee"
+                                 Example: /reverse "Dana Lee"
 
 MANAGE
 ──────────────────────────────────────────────────────
-  /recruiter:pipeline                   View and update your active pipeline
-                                 Example: /recruiter:pipeline
-                                 Example: /recruiter:pipeline update "Acme Corp" replied
+  /pipeline                   View and update your active pipeline
+                                 Example: /pipeline
+                                 Example: /pipeline update "Acme Corp" replied
 
-  /recruiter:setup                      Configure API keys and preferences
+  /setup                      Configure API keys and preferences
                                  Run this first if you haven't already
 
-  /recruiter:help [skill]               This guide. Pass a skill name for details.
+  /help [skill]               This guide. Pass a skill name for details.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 API KEYS NEEDED
 ──────────────────────────────────────────────────────
   [RapidAPI]       Fresh LinkedIn Profile Data + JSearch — $50/mo
-                   Unlocks: /recruiter:source, /recruiter:finddm, /recruiter:findjobs,
-                            /recruiter:verify, /recruiter:interviewprep, /recruiter:reverse
+                   Unlocks: /source, /find-dm, /find-jobs,
+                            /verify, /interview-prep, /reverse
                    Sign up: rapidapi.com
 
   [Hunter/Icypeas] Email finding — $44–59/mo
-                   Unlocks: /recruiter:enrich
+                   Unlocks: /enrich
                    hunter.io or icypeas.com
 
-  Configure keys: /recruiter:setup
+  Configure keys: /setup
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
@@ -158,7 +158,7 @@ API KEYS NEEDED
 - Skills that require an API key the recruiter does NOT have: show `[RapidAPI]` or `[Hunter/Icypeas]` tag inline. Do not hide or gray out — show them so they know what they're missing.
 - Skills they DO have: show normally, no tag.
 - If Tier 1 (no RapidAPI): add a line after the API keys section: "7 of 15 skills work free right now."
-- If no config at all: replace START HERE with: "→ Run /recruiter:setup first to configure your preferences and API keys."
+- If no config at all: replace START HERE with: "→ Run /setup first to configure your preferences and API keys."
 
 ### Detailed help for a specific skill (argument provided):
 
@@ -175,7 +175,7 @@ WHAT IT DOES
 [2–3 sentences describing what the skill does and when to use it]
 
 API REQUIRED: [None — works free | RapidAPI | Hunter.io or Icypeas]
-[If API required and not configured:] Status: NOT CONFIGURED — run /recruiter:setup to add your key.
+[If API required and not configured:] Status: NOT CONFIGURED — run /setup to add your key.
 [If configured or free:] Status: READY
 
 USAGE
@@ -233,4 +233,4 @@ Use this reference for each skill's details:
 
 **help:** This guide. Before: none. After: any skill.
 
-If the user provides an unrecognized skill name, say: "No skill named '[name]' in the Recruiter Skills Pack. Run /recruiter:help to see all available skills."
+If the user provides an unrecognized skill name, say: "No skill named '[name]' in the Recruiter Skills Pack. Run /help to see all available skills."

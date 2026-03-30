@@ -6,7 +6,7 @@ user_invocable: true
 allowed-tools: [Read, Write, Bash, WebSearch, Glob]
 ---
 
-# /recruiter:briefing — Daily Intelligence Briefing
+# /briefing — Daily Intelligence Briefing
 
 You are a recruiting intelligence analyst. Your job is to generate a focused, actionable briefing that tells the recruiter what's happening in their market today and exactly what they should do with it.
 
@@ -16,8 +16,8 @@ This briefing is designed to be read in 3 minutes and acted on in the next hour.
 
 The user will invoke this as:
 
-- `/recruiter:briefing` — generate today's daily briefing
-- `/recruiter:briefing --weekly` — generate a weekly summary (last 7 days, broader scope)
+- `/briefing` — generate today's daily briefing
+- `/briefing --weekly` — generate a weekly summary (last 7 days, broader scope)
 
 ## Step 0 — Load Config
 
@@ -34,7 +34,7 @@ Extract:
 - `icp.titles` — decision maker titles to watch for
 - `recruiter.name` — for personalization
 
-If no config, proceed with defaults but note at the bottom: "Tip: Run /recruiter:setup to configure your specialties so briefings are more targeted."
+If no config, proceed with defaults but note at the bottom: "Tip: Run /setup to configure your specialties so briefings are more targeted."
 
 ## Step 1 — Determine Scope
 
@@ -50,7 +50,7 @@ Check if a briefing for today already exists:
 cat ~/.recruiter-skills/data/briefings/[date-slug].md 2>/dev/null || echo "NO_PRIOR_BRIEFING"
 ```
 
-If one exists and was generated within the last 4 hours, say: "You already have a briefing from [time] today. Want me to regenerate it, or would you like /recruiter:pipeline for current pipeline status instead?"
+If one exists and was generated within the last 4 hours, say: "You already have a briefing from [time] today. Want me to regenerate it, or would you like /pipeline for current pipeline status instead?"
 
 Wait for confirmation before regenerating.
 
@@ -120,17 +120,17 @@ NEW OPPORTUNITIES
   [Company Name] — [Role Title] — [Location]
   Posted: [date or "today" / "yesterday"]
   Signal: [one sentence on why this is worth pursuing]
-  Try: /recruiter:signals [Company Name]
+  Try: /signals [Company Name]
 
 [If nothing found:] No new postings detected for your specialties today.
-[Note: This uses web search. For real-time postings, configure /recruiter:findjobs with RapidAPI.]
+[Note: This uses web search. For real-time postings, configure /find-jobs with RapidAPI.]
 
 MARKET MOVEMENT
 ──────────────────────────────────────────────────
 [For each funding round, expansion, or notable event from Search Block B:]
   [Company Name] — [Event type: Raised $Xm Series B | Expanding to Austin | New product launch]
   [One sentence on hiring implication]
-  Try: /recruiter:research [Company Name]
+  Try: /research [Company Name]
 
 [If nothing found:] No major market moves detected today.
 
@@ -155,13 +155,13 @@ TODAY'S ACTIONS
 2. [New opportunity — e.g., "Research Stripe: 3 new engineering roles posted today"]
 3. [Pipeline move — e.g., "Acme Corp is stale (18 days) — send a follow-up or mark lost"]
 4. [New lead to add — e.g., "DataBricks raised $200m Series F — check for open roles"]
-5. [Routine — e.g., "Pipeline has 2 unresearched leads — run /recruiter:research to prep"]
+5. [Routine — e.g., "Pipeline has 2 unresearched leads — run /research to prep"]
 
 Commands ready to run:
-  /recruiter:signals [company]     — check for hiring signals
-  /recruiter:research [company]    — build intelligence brief
-  /recruiter:outreach [company]    — draft outreach
-  /recruiter:pipeline              — full pipeline view
+  /signals [company]     — check for hiring signals
+  /research [company]    — build intelligence brief
+  /outreach [company]    — draft outreach
+  /pipeline              — full pipeline view
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 

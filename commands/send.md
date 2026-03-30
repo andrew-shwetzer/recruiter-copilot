@@ -23,7 +23,7 @@ Examples:
 - `/recruiter:send Acme Corp`
 - `/recruiter:send Sarah Chen`
 - `/recruiter:send the outreach to Stripe`
-- `/recruiter:send ~/.recruiter-skills/data/outreach/acme-corp-sarah-chen.md`
+- `/recruiter:send ~/.recruiter-skills/data/outreach/acme-cosarah-chen.md`
 
 ---
 
