@@ -77,10 +77,12 @@ If the API returns an error or empty results, fall through to Step 2B and note t
 
 ## Step 2B — Fallback Path (No API key or API failure)
 
+> **Date filter:** In all search queries below, replace `{{YEAR}}` with the current year (e.g., 2026) and `{{PREV_YEAR}}` with the previous year (e.g., 2025). This ensures Google returns date-relevant results.
+
 Run targeted WebSearch queries to find recent job postings:
 
-1. `"[Job Title]" "[Location]" job opening 2026 site:linkedin.com OR site:indeed.com`
-2. `"[Job Title]" "[Location]" "we're hiring" OR "now hiring" 2026`
+1. `"[Job Title]" "[Location]" job opening {{YEAR}} site:linkedin.com OR site:indeed.com`
+2. `"[Job Title]" "[Location]" "we're hiring" OR "now hiring" {{YEAR}}`
 3. `"[Job Title]" "[Location]" site:greenhouse.io OR site:lever.co OR site:ashbyhq.com`
 4. `"[Job Title]" job posting "[Location]" apply`
 

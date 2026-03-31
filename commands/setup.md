@@ -129,7 +129,7 @@ Map their choice: 1 = `professional_direct`, 2 = `warm`, 3 = `casual`.
 ## Step 4: API Keys
 
 Say:
-> "Now for API keys. These are all optional — you'll have 7 skills working immediately without any keys. Adding keys unlocks more powerful capabilities."
+> "Now for API keys. These are all optional — you'll have 11 skills working immediately without any keys. Adding keys unlocks more powerful capabilities."
 
 Then say:
 > "Here's what each key unlocks:"
@@ -230,44 +230,48 @@ echo $HTTP_CODE
 
 Based on which keys passed verification, show the skill breakdown:
 
-**Always show (Tier 1 — 7 skills):**
+**Always show (Tier 1 — 11 skills):**
 ```
 TIER 1 — AVAILABLE NOW (no keys needed)
 ----------------------------------------
-/recruiter:research       Deep company research before outreach
 /recruiter:signals        Detect hiring signals at target companies
+/recruiter:research       Deep company research before outreach
 /recruiter:outreach       Draft 3-email sequence to hiring managers
 /recruiter:candidatemsg  Personalized messages to candidates
 /recruiter:resumescreen  Score a resume against a job description
 /recruiter:marketmap     Map the competitive landscape for a role
 /recruiter:score          Rate candidate-job fit across 9 dimensions
+/recruiter:pipeline       View and update your active pipeline
+/recruiter:briefing       Daily market intelligence briefing
+/recruiter:setup          Configure API keys and preferences
+/recruiter:help           Full skill guide with examples
 ```
 
-**If RapidAPI key verified (Tier 2 — +4 skills):**
+**If RapidAPI key verified (Tier 2 — +6 skills):**
 ```
-TIER 2 — UNLOCKED WITH RAPIDAPI (+4 skills)
+TIER 2 — UNLOCKED WITH RAPIDAPI (+6 skills)
 --------------------------------------------
 /recruiter:source         Find candidates matching your ICP on LinkedIn
 /recruiter:finddm        Identify decision makers at target companies
 /recruiter:verify         Verify candidate background and digital presence
 /recruiter:interviewprep Generate identity verification questions
-```
-
-**If email finder key verified (Tier 3 — +3 skills, requires RapidAPI too):**
-```
-TIER 3 — UNLOCKED WITH EMAIL FINDER (+3 skills)
--------------------------------------------------
-/recruiter:enrich         Find email address for any contact
 /recruiter:findjobs      Search job boards for matching openings
 /recruiter:reverse        Take a candidate, find their best opportunities, draft outreach
+```
+
+**If email finder key verified (Tier 3 — +1 skill):**
+```
+TIER 3 — UNLOCKED WITH EMAIL FINDER (+1 skill)
+-------------------------------------------------
+/recruiter:enrich         Find email address for any contact
 ```
 
 **If Tier 3 key present but no RapidAPI key:**
 ```
 TIER 3 — PARTIALLY READY
 --------------------------
-You have an email finder key, but /recruiter:findjobs and /recruiter:reverse also need
-a RapidAPI key to reach full power. Add one later with /recruiter:setup --reset.
+You have an email finder key, but 6 more skills need a RapidAPI key.
+Add one later with /recruiter:setup --reset.
 
 /recruiter:enrich         Find email address for any contact (available now)
 ```

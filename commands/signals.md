@@ -47,9 +47,11 @@ For each company, scan across three signal tiers. Run searches in parallel where
 
 These mean: they are hiring right now, or they have an unfilled need.
 
+> **Date filter:** In all search queries below, replace `{{YEAR}}` with the current year (e.g., 2026) and `{{PREV_YEAR}}` with the previous year (e.g., 2025). This ensures Google returns date-relevant results.
+
 **Searches:**
 - `"[Company]" site:linkedin.com/jobs OR site:greenhouse.io OR site:lever.co OR site:ashbyhq.com`
-- `"[Company]" jobs hiring [current year]`
+- `"[Company]" jobs hiring {{YEAR}}`
 - `"[Company]" "failed to hire" OR "still looking" OR "expanding team"`
 
 **What to look for:**
@@ -70,9 +72,9 @@ These mean: they are hiring right now, or they have an unfilled need.
 These mean: something changed that will drive hiring.
 
 **Searches:**
-- `"[Company]" funding OR "series" OR "raised" 2025 OR 2026`
+- `"[Company]" funding OR "series" OR "raised" {{PREV_YEAR}} OR {{YEAR}}`
 - `"[Company]" "new client" OR "partnership" OR "contract awarded" OR "expansion"`
-- `"[Company]" "new office" OR "opening" OR "market" 2025 OR 2026`
+- `"[Company]" "new office" OR "opening" OR "market" {{PREV_YEAR}} OR {{YEAR}}`
 
 **What to look for:**
 - Recent funding (within 6 months = hiring incoming)
@@ -93,8 +95,8 @@ These mean: something changed that will drive hiring.
 These mean: leadership change or team disruption is coming.
 
 **Searches:**
-- `"[Company]" "new VP" OR "new Chief" OR "joins as" OR "appointed" 2025 OR 2026`
-- `"[Company]" "left" OR "departed" OR "resigned" OR "layoff" 2025 OR 2026`
+- `"[Company]" "new VP" OR "new Chief" OR "joins as" OR "appointed" {{PREV_YEAR}} OR {{YEAR}}`
+- `"[Company]" "left" OR "departed" OR "resigned" OR "layoff" {{PREV_YEAR}} OR {{YEAR}}`
 - `"[Company]" CEO OR CTO OR "Head of" LinkedIn new role`
 
 **What to look for:**

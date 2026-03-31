@@ -74,13 +74,15 @@ Extract: company names of all active leads, their scores if present, their signa
 
 Use `recruiter.specialties` from config (or default to "software engineering OR sales OR operations") as the role focus. Use `recruiter.target_industries` and `recruiter.target_locations` to focus searches.
 
+> **Date filter:** In all search queries below, replace `{{YEAR}}` with the current year (e.g., 2026) and `{{PREV_YEAR}}` with the previous year (e.g., 2025). This ensures Google returns date-relevant results.
+
 **Search Block A — New Job Postings**
 
 Run 2–3 searches targeting new postings in the recruiter's specialties:
 
 - `[specialty roles] jobs posted today site:linkedin.com OR site:greenhouse.io OR site:lever.co`
 - `[target industries] hiring [specialty] [current month year]`
-- `[specialty] "urgently hiring" OR "immediate start" OR "backfill" [current year]`
+- `[specialty] "urgently hiring" OR "immediate start" OR "backfill" {{YEAR}}`
 
 Extract: Company name, role title, location, date posted, any urgency signals.
 
@@ -89,7 +91,7 @@ Extract: Company name, role title, location, date posted, any urgency signals.
 Run 2 searches for industry news that signals hiring:
 
 - `[target industries] funding announcement OR "series" raised [current month year]`
-- `[target industries] expansion OR "new office" OR "new market" [current year]`
+- `[target industries] expansion OR "new office" OR "new market" {{YEAR}}`
 
 Extract: Company, event type, amount/scale, date.
 

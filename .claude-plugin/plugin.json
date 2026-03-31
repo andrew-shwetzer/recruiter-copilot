@@ -1,7 +1,7 @@
 {
   "name": "recruiter",
   "version": "2.1.0",
-  "description": "Complete recruiting copilot. Signal monitoring, candidate sourcing, outreach (draft + send), ATS integration, pipeline management, candidate verification. Connects to Gmail, Calendar, Greenhouse, Lever, Ashby. Works with or without API keys — 8 skills free, full suite with integrations.",
+  "description": "Complete recruiting copilot. Signal monitoring, candidate sourcing, outreach (draft + send), ATS integration, pipeline management, candidate verification. Connects to Gmail, Calendar, Greenhouse, Lever, Ashby. Works with or without API keys — 11 skills free, full suite with integrations.",
   "author": {
     "name": "Talent Signals",
     "email": "info@talentsignals.ai",

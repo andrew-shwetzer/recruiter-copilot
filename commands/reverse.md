@@ -111,10 +111,12 @@ Tell the user:
 
 > "No RapidAPI key found for JSearch. With a key, I'd query live job boards across LinkedIn, Indeed, and others. Searching the web now — results will require manual follow-up. Run `/recruiter:setup` to unlock real-time job board access."
 
+> **Date filter:** In all search queries below, replace `{{YEAR}}` with the current year (e.g., 2026) and `{{PREV_YEAR}}` with the previous year (e.g., 2025). This ensures Google returns date-relevant results.
+
 Run WebSearch:
-1. `"[Primary Title]" "[Location]" job opening 2026 site:linkedin.com OR site:indeed.com`
-2. `"[Primary Title]" job 2026 site:greenhouse.io OR site:lever.co`
-3. `"[Primary Title]" "[top skill]" "[top skill 2]" hiring 2026`
+1. `"[Primary Title]" "[Location]" job opening {{YEAR}} site:linkedin.com OR site:indeed.com`
+2. `"[Primary Title]" job {{YEAR}} site:greenhouse.io OR site:lever.co`
+3. `"[Primary Title]" "[top skill]" "[top skill 2]" hiring {{YEAR}}`
 
 ## Step 4 — Score Each Job for Fit
 

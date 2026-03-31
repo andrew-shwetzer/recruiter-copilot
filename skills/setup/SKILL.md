@@ -129,7 +129,7 @@ Map their choice: 1 = `professional_direct`, 2 = `warm`, 3 = `casual`.
 ## Step 4: API Keys
 
 Say:
-> "Now for API keys. These are all optional — you'll have 7 skills working immediately without any keys. Adding keys unlocks more powerful capabilities."
+> "Now for API keys. These are all optional — you'll have 11 skills working immediately without any keys. Adding keys unlocks more powerful capabilities."
 
 Then say:
 > "Here's what each key unlocks:"
@@ -230,44 +230,48 @@ echo $HTTP_CODE
 
 Based on which keys passed verification, show the skill breakdown:
 
-**Always show (Tier 1 — 7 skills):**
+**Always show (Tier 1 — 11 skills):**
 ```
 TIER 1 — AVAILABLE NOW (no keys needed)
 ----------------------------------------
-/research       Deep company research before outreach
 /signals        Detect hiring signals at target companies
+/research       Deep company research before outreach
 /outreach       Draft 3-email sequence to hiring managers
 /candidate-msg  Personalized messages to candidates
 /resume-screen  Score a resume against a job description
 /market-map     Map the competitive landscape for a role
 /score          Rate candidate-job fit across 9 dimensions
+/pipeline       View and update your active pipeline
+/briefing       Daily market intelligence briefing
+/setup          Configure API keys and preferences
+/help           Full skill guide with examples
 ```
 
-**If RapidAPI key verified (Tier 2 — +4 skills):**
+**If RapidAPI key verified (Tier 2 — +6 skills):**
 ```
-TIER 2 — UNLOCKED WITH RAPIDAPI (+4 skills)
+TIER 2 — UNLOCKED WITH RAPIDAPI (+6 skills)
 --------------------------------------------
 /source         Find candidates matching your ICP on LinkedIn
 /find-dm        Identify decision makers at target companies
 /verify         Verify candidate background and digital presence
 /interview-prep Generate identity verification questions
-```
-
-**If email finder key verified (Tier 3 — +3 skills, requires RapidAPI too):**
-```
-TIER 3 — UNLOCKED WITH EMAIL FINDER (+3 skills)
--------------------------------------------------
-/enrich         Find email address for any contact
 /find-jobs      Search job boards for matching openings
 /reverse        Take a candidate, find their best opportunities, draft outreach
+```
+
+**If email finder key verified (Tier 3 — +1 skill):**
+```
+TIER 3 — UNLOCKED WITH EMAIL FINDER (+1 skill)
+-------------------------------------------------
+/enrich         Find email address for any contact
 ```
 
 **If Tier 3 key present but no RapidAPI key:**
 ```
 TIER 3 — PARTIALLY READY
 --------------------------
-You have an email finder key, but /find-jobs and /reverse also need
-a RapidAPI key to reach full power. Add one later with /setup --reset.
+You have an email finder key, but 6 more skills need a RapidAPI key.
+Add one later with /setup --reset.
 
 /enrich         Find email address for any contact (available now)
 ```

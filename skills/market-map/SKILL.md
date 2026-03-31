@@ -42,10 +42,12 @@ Check if `~/.recruiter-skills/config.yaml` exists. If it does, read it. The `rec
 
 Run the following searches in sequence. For each, extract the most relevant data points. Do not include raw search result text in the output — synthesize and attribute.
 
+> **Date filter:** In all search queries below, replace `{{YEAR}}` with the current year (e.g., 2026) and `{{PREV_YEAR}}` with the previous year (e.g., 2025). This ensures Google returns date-relevant results.
+
 ### 2a. Compensation Data
 Search queries (run 2-3 of these, pick the most data-rich results):
-- `"{role_title}" salary "{location}" 2025 site:levels.fyi OR site:glassdoor.com OR site:linkedin.com/salary OR site:salary.com`
-- `"{role_title}" compensation range "{location}" 2025`
+- `"{role_title}" salary "{location}" {{YEAR}} site:levels.fyi OR site:glassdoor.com OR site:linkedin.com/salary OR site:salary.com`
+- `"{role_title}" compensation range "{location}" {{YEAR}}`
 - `"{role_title}" pay "{location}" percentile`
 
 Extract: base salary range (25th/50th/75th percentile if available), total comp if relevant (for tech roles), equity/bonus norms.
@@ -53,7 +55,7 @@ Extract: base salary range (25th/50th/75th percentile if available), total comp 
 ### 2b. Job Posting Volume and Demand
 Search queries:
 - `"{role_title}" jobs "{location}" site:linkedin.com/jobs OR site:indeed.com OR site:greenhouse.io`
-- `"{role_title}" "{location}" hiring 2025`
+- `"{role_title}" "{location}" hiring {{YEAR}}`
 
 Extract: approximate number of active postings, which companies are actively hiring, how long postings have been up (proxy for difficulty to fill).
 
@@ -75,16 +77,16 @@ Extract: The top 5-8 companies where this role concentration is highest right no
 
 ### 2e. Skills Trends
 Search queries:
-- `"{role_title}" required skills 2025`
-- `"{role_title}" job description requirements 2025`
-- `what skills does a "{role_title}" need 2025`
+- `"{role_title}" required skills {{YEAR}}`
+- `"{role_title}" job description requirements {{YEAR}}`
+- `what skills does a "{role_title}" need {{YEAR}}`
 
 Extract: must-have skills (appearing in >70% of postings), nice-to-have skills, and skills that are declining in relevance (being replaced by newer tools/tech).
 
 ### 2f. Supply/Demand Signals
 Search queries:
-- `"{role_title}" talent shortage 2025 OR "{role_title}" oversupply 2025`
-- `"{role_title}" hiring market 2025`
+- `"{role_title}" talent shortage OR "{role_title}" oversupply {{YEAR}}`
+- `"{role_title}" hiring market {{YEAR}}`
 
 Extract: Is this role in shortage (hard to fill, candidates have leverage) or surplus (many qualified applicants, clients have leverage)? Any recent layoffs or hiring freezes in this category?
 
@@ -151,7 +153,7 @@ REQUIRED SKILLS (what every JD asks for)
 Must-have:   [comma-separated list]
 Nice-to-have: [comma-separated list]
 Fading out:  [skills that were standard but are being replaced]
-Emerging:    [skills starting to appear in job postings that will be standard by 2026]
+Emerging:    [skills starting to appear in job postings that will be standard within 1-2 years]
 
 
 ACTIVE HIRING (companies posting right now)

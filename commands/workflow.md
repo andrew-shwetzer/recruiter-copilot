@@ -89,12 +89,14 @@ If a lead file exists and is less than 3 days old, use those signals. If older o
 
 **Run signal searches (WebSearch):**
 
+> **Date filter:** In all search queries below, replace `{{YEAR}}` with the current year (e.g., 2026) and `{{PREV_YEAR}}` with the previous year (e.g., 2025). This ensures Google returns date-relevant results.
+
 Run these in sequence, extracting specific facts:
 
-1. `"[Company]" site:greenhouse.io OR site:lever.co OR site:ashbyhq.com OR site:linkedin.com/jobs 2025 OR 2026`
-2. `"[Company]" "[Role]" OR hiring 2025 OR 2026`
-3. `"[Company]" funding OR "series" OR "raised" 2025 OR 2026`
-4. `"[Company]" "new VP" OR "new CTO" OR "joins as" OR "appointed" 2025 OR 2026`
+1. `"[Company]" site:greenhouse.io OR site:lever.co OR site:ashbyhq.com OR site:linkedin.com/jobs {{YEAR}}`
+2. `"[Company]" "[Role]" OR hiring {{YEAR}}`
+3. `"[Company]" funding OR "series" OR "raised" {{PREV_YEAR}} OR {{YEAR}}`
+4. `"[Company]" "new VP" OR "new CTO" OR "joins as" OR "appointed" {{PREV_YEAR}} OR {{YEAR}}`
 
 From the results, extract:
 - Open job postings (especially for the target role)
@@ -138,7 +140,7 @@ If research exists and is less than 7 days old, use it. Otherwise, run fresh sea
 
 1. `"[Company]" company funding employees overview`
 2. `"[Company]" site:crunchbase.com OR site:linkedin.com/company`
-3. `"[Company]" news 2025 OR 2026`
+3. `"[Company]" news {{YEAR}}`
 4. `"[Company]" engineering blog OR tech stack`
 
 Extract:

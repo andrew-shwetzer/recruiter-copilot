@@ -7,7 +7,7 @@
 ## Install
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/andrew-shwetzer/recruiter-copilot/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/andrew-shwetzer/recruiter-copilot/main/remote-install.sh | bash
 ```
 
 Or clone and run locally:
@@ -28,7 +28,7 @@ cd recruiter-copilot
 /setup
 ```
 
-This walks you through entering your recruiter profile, the types of roles you work, and optionally your API keys. Takes about 2 minutes. Seven skills work immediately with zero API keys.
+This walks you through entering your recruiter profile, the types of roles you work, and optionally your API keys. Takes about 2 minutes. 11 skills work immediately with zero API keys.
 
 **2. Find your first target company:**
 
@@ -84,6 +84,13 @@ Writes a 3-email cold sequence to the right hiring manager, grounded in what `/r
 | `/briefing` | Daily market intelligence briefing | Free |
 | `/setup` | First-run configuration wizard | Free |
 | `/help` | Full skill guide with examples | Free |
+| **Workflow Commands** | | |
+| `/connect` | Integration wizard (Gmail, Calendar, ATS, Airtable, HubSpot) | Free |
+| `/send <name or company>` | Send a drafted outreach email via Gmail | Free |
+| `/submit <candidate> to <role>` | Submit candidate to ATS (Greenhouse, Lever, Ashby, Bullhorn) | Free |
+| `/workflow <company> for <role>` | End-to-end pipeline: signals → research → DM → email → outreach → send | Free |
+
+> Both `/signals` and `/recruiter:signals` work — use whichever you prefer.
 
 ---
 
@@ -91,8 +98,8 @@ Writes a 3-email cold sequence to the right hiring manager, grounded in what `/r
 
 | Tier | Monthly Cost | What You Need | Skills Unlocked |
 |------|-------------|---------------|-----------------|
-| **Tier 1 — Free** | $0 | Nothing | 7 skills: signals, research, outreach, resume screen, market map, score, candidate msg |
-| **Tier 2 — Basic** | ~$50/mo | RapidAPI key (Fresh LinkedIn Profile Data + JSearch) | +4 skills: source, find-dm, verify, interview-prep, find-jobs, reverse |
+| **Tier 1 — Free** | $0 | Nothing | 11 skills: signals, research, outreach, candidate-msg, resume-screen, market-map, score, pipeline, briefing, setup, help |
+| **Tier 2 — Basic** | ~$50/mo | RapidAPI key (Fresh LinkedIn Profile Data + JSearch) | +6 skills: source, find-dm, verify, interview-prep, find-jobs, reverse |
 | **Tier 3 — Pro** | ~$94–109/mo | RapidAPI + Hunter.io ($44/mo) or Icypeas ($59/mo) | +1 skill: email enrichment via `/enrich` |
 
 All API keys are stored locally in `~/.recruiter-skills/config.yaml`. They are never sent anywhere except the API endpoints you configure.
@@ -121,7 +128,7 @@ All data is stored in `~/.recruiter-skills/` on your machine:
 
 **Do I need all the API keys?**
 
-No. Seven skills work free with no API keys at all. Run `/setup` and skip the API key steps — you can add them later from the same wizard.
+No. 11 skills work free with no API keys at all. Run `/setup` and skip the API key steps — you can add them later from the same wizard.
 
 **Which API should I add first?**
 

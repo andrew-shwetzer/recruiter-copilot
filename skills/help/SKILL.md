@@ -57,8 +57,8 @@ Use this to determine what the recruiter should do next:
 RECRUITER SKILLS PACK — Your AI Recruiting Toolkit
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-YOUR TIER: [Free (7 skills) | Basic (11 skills) | Pro (15 skills — all unlocked)]
-[If Tier 1:] Upgrade to Basic: add your RapidAPI key in /setup to unlock 4 more skills.
+YOUR TIER: [Free (11 skills) | Basic (17 skills) | Pro (18 skills — all unlocked)]
+[If Tier 1:] Upgrade to Basic: add your RapidAPI key in /setup to unlock 6 more skills.
 [If Tier 2:] Upgrade to Pro: add Hunter.io/Icypeas + JSearch keys in /setup.
 [If Tier 3:] All APIs configured. ✓
 
@@ -127,6 +127,26 @@ REVERSE RECRUITER
                                  draft outreach to those companies
                                  Example: /reverse "Dana Lee"
 
+WORKFLOW
+──────────────────────────────────────────────────────
+  /connect [--reset]          Integration setup wizard
+                                 Connects Gmail, Calendar, ATS, Airtable, HubSpot
+                                 Example: /connect
+                                 Example: /connect --reset
+
+  /send <name or company>     Send a drafted outreach email
+                                 Creates a Gmail draft for review, or copy-paste fallback
+                                 Example: /send Acme Corp
+                                 Example: /send Sarah Chen
+
+  /submit <candidate> to      Submit candidate to your ATS
+    <role> [at <company>]        Greenhouse, Lever, Ashby, Bullhorn, or local fallback
+                                 Example: /submit Jane Smith to Senior DevOps at Acme
+
+  /workflow <company>          Full pipeline in one command
+    for <role>                   Signals → research → find DM → email → draft outreach
+                                 Example: /workflow Stripe for Head of Platform Eng
+
 MANAGE
 ──────────────────────────────────────────────────────
   /pipeline                   View and update your active pipeline
@@ -157,7 +177,7 @@ API KEYS NEEDED
 **Display rules:**
 - Skills that require an API key the recruiter does NOT have: show `[RapidAPI]` or `[Hunter/Icypeas]` tag inline. Do not hide or gray out — show them so they know what they're missing.
 - Skills they DO have: show normally, no tag.
-- If Tier 1 (no RapidAPI): add a line after the API keys section: "7 of 15 skills work free right now."
+- If Tier 1 (no RapidAPI): add a line after the API keys section: "11 of 18 skills work free right now."
 - If no config at all: replace START HERE with: "→ Run /setup first to configure your preferences and API keys."
 
 ### Detailed help for a specific skill (argument provided):
@@ -232,5 +252,13 @@ Use this reference for each skill's details:
 **setup:** First-run wizard. Collects recruiter profile, ICP, and API keys. Creates config.yaml. No API required to run but guides through adding them. Before: none (run first). After: everything.
 
 **help:** This guide. Before: none. After: any skill.
+
+**connect:** Integration setup wizard. Walks through connecting Gmail, Google Calendar, ATS (Greenhouse/Lever/Ashby/Bullhorn), Airtable pipeline, and HubSpot CRM. Auto-provisions Airtable tables. No API required to run. Before: setup. After: send, submit, workflow.
+
+**send:** Sends a drafted outreach email via Gmail (creates a draft for review) or provides copy-paste fallback if no email integration. Tracks follow-up schedule (Day 3, Day 7). No API required. Before: outreach. After: pipeline.
+
+**submit:** Submits a candidate to a specific job in the connected ATS (Greenhouse, Lever, Ashby, or Bullhorn). Falls back to local pipeline tracking if no ATS is configured. No API required. Before: source, score. After: pipeline.
+
+**workflow:** Full recruiting pipeline in one command. Chains signal scan, company research, find decision maker, enrich email, draft 3-email sequence, and optionally send. The end-to-end command. No API required for core flow (RapidAPI and Hunter/Icypeas improve results). Before: setup. After: pipeline.
 
 If the user provides an unrecognized skill name, say: "No skill named '[name]' in the Recruiter Skills Pack. Run /help to see all available skills."

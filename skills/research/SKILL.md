@@ -58,10 +58,12 @@ Run these searches in sequence. Extract the most specific, useful facts from eac
 2. `"[Company Name]" site:crunchbase.com OR site:linkedin.com/company`
 3. `"[Company Name]" tech stack engineering blog`
 
+> **Date filter:** In all search queries below, replace `{{YEAR}}` with the current year (e.g., 2026) and `{{PREV_YEAR}}` with the previous year (e.g., 2025). This ensures Google returns date-relevant results.
+
 ### Search Block B — Recent Activity
-4. `"[Company Name]" news 2025 OR 2026`
+4. `"[Company Name]" news {{YEAR}}`
 5. `"[Company Name]" funding raise announcement`
-6. `"[Company Name]" layoffs OR hiring freeze OR expansion 2025 OR 2026`
+6. `"[Company Name]" layoffs OR hiring freeze OR expansion {{PREV_YEAR}} OR {{YEAR}}`
 
 ### Search Block C — Hiring Intelligence
 7. `"[Company Name]" jobs site:linkedin.com OR site:greenhouse.io OR site:lever.co`
@@ -73,9 +75,9 @@ Run these searches in sequence. Extract the most specific, useful facts from eac
 
 ### If --deep flag:
 Run 4 additional searches:
-11. `"[Company Name]" customer wins OR case study OR partnership 2025 OR 2026`
+11. `"[Company Name]" customer wins OR case study OR partnership {{YEAR}}`
 12. `"[Company Name]" product launch OR new feature OR release`
-13. `"[Company Name]" glassdoor reviews 2025`
+13. `"[Company Name]" glassdoor reviews {{YEAR}}`
 14. `"[Company Name]" "[Company Name]" podcast OR interview OR talk CEO`
 
 After completing searches, synthesize findings. Do not dump raw search results. Extract facts, patterns, and signals.

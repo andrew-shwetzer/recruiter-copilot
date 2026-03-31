@@ -57,8 +57,8 @@ Use this to determine what the recruiter should do next:
 RECRUITER SKILLS PACK — Your AI Recruiting Toolkit
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-YOUR TIER: [Free (7 skills) | Basic (11 skills) | Pro (15 skills — all unlocked)]
-[If Tier 1:] Upgrade to Basic: add your RapidAPI key in /recruiter:setup to unlock 4 more skills.
+YOUR TIER: [Free (11 skills) | Basic (17 skills) | Pro (18 skills — all unlocked)]
+[If Tier 1:] Upgrade to Basic: add your RapidAPI key in /recruiter:setup to unlock 6 more skills.
 [If Tier 2:] Upgrade to Pro: add Hunter.io/Icypeas + JSearch keys in /recruiter:setup.
 [If Tier 3:] All APIs configured. ✓
 
@@ -157,7 +157,7 @@ API KEYS NEEDED
 **Display rules:**
 - Skills that require an API key the recruiter does NOT have: show `[RapidAPI]` or `[Hunter/Icypeas]` tag inline. Do not hide or gray out — show them so they know what they're missing.
 - Skills they DO have: show normally, no tag.
-- If Tier 1 (no RapidAPI): add a line after the API keys section: "7 of 15 skills work free right now."
+- If Tier 1 (no RapidAPI): add a line after the API keys section: "11 of 18 skills work free right now."
 - If no config at all: replace START HERE with: "→ Run /recruiter:setup first to configure your preferences and API keys."
 
 ### Detailed help for a specific skill (argument provided):

@@ -82,12 +82,14 @@ Tell the user:
 
 > "No RapidAPI key found. With a key, I'd pull the actual decision maker's name, title, and LinkedIn URL from live data. Running WebSearch now — results will require manual verification. Run `/recruiter:setup` to unlock the full API path."
 
+> **Date filter:** In all search queries below, replace `{{YEAR}}` with the current year (e.g., 2026) and `{{PREV_YEAR}}` with the previous year (e.g., 2025). This ensures Google returns date-relevant results.
+
 Run these WebSearch queries in order until you find a strong candidate:
 
 1. `"[Company Name]" "[Primary Title 1]" site:linkedin.com/in`
 2. `"[Company Name]" "[Primary Title 2]" site:linkedin.com`
 3. `"[Company Name]" "[Primary Title 1]" OR "[Primary Title 2]" name LinkedIn`
-4. `"[Company Name]" hiring manager "[role type]" 2025 OR 2026`
+4. `"[Company Name]" hiring manager "[role type]" {{YEAR}}`
 
 Extract the best candidate from results. Note confidence level.
 
