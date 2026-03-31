@@ -44,7 +44,7 @@ Welcome to the Recruiter Skills Pack!
 
 I'll walk you through a quick setup (takes about 3 minutes).
 
-This pack gives you 15 AI-powered recruiting skills inside Claude Code:
+This pack gives you 18 AI-powered recruiting skills inside Claude Code:
 - Research companies before outreach
 - Find and source candidates
 - Score resume fit, draft personalized messages

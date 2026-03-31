@@ -29,7 +29,7 @@ if [ -d "$REPO_DIR/.git" ]; then
 else
   info "Downloading skills..."
   mkdir -p "$HOME/.recruiter-skills"
-  git clone --quiet https://github.com/andrew-shwetzer/recruiter-plugin.git "$REPO_DIR"
+  git clone --quiet https://github.com/andrew-shwetzer/recruiter-copilot.git "$REPO_DIR"
   ok "Downloaded"
 fi
 
@@ -73,7 +73,7 @@ echo ""
 echo "  ────────────────────────────────────────────────────"
 echo -e "  ${GREEN}${BOLD}Done.${RESET} Open Claude Cowork (or Code) and type:"
 echo ""
-echo -e "    ${CYAN}/rpsetup${RESET}"
+echo -e "    ${CYAN}/setup${RESET}"
 echo ""
 echo "  11 skills work free. Full suite with API keys."
 echo "  Restart Cowork if skills don't appear immediately."
