@@ -1,10 +1,21 @@
-# Recruiter Copilot for Claude Code
+# Recruiter Copilot
 
-18 AI-powered recruiting skills that install directly into Claude Code / Cowork. No server, no SaaS, no separate app. Signal scanning, company research, candidate sourcing, outreach drafting, pipeline tracking, all from your terminal. Everything stays on your machine.
+18 AI-powered recruiting skills for Claude. Signal scanning, company research, candidate sourcing, outreach drafting, pipeline tracking. No server, no SaaS, no separate app. Everything stays on your machine.
 
 ---
 
 ## Install
+
+### Claude Cowork (no terminal needed)
+
+1. Open [INSTALL-COWORK.md](INSTALL-COWORK.md)
+2. Copy the entire contents
+3. Paste into a new Cowork conversation
+4. Claude builds the plugin automatically
+
+Commands use the `recruiter:` namespace: `/recruiter:signals`, `/recruiter:outreach`, etc.
+
+### Claude Code CLI
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/andrew-shwetzer/recruiter-copilot/main/remote-install.sh | bash
@@ -17,6 +28,8 @@ git clone https://github.com/andrew-shwetzer/recruiter-copilot.git
 cd recruiter-copilot
 ./install.sh
 ```
+
+Commands use short names: `/signals`, `/outreach`, etc. Both `/signals` and `/recruiter:signals` work.
 
 ---
 
